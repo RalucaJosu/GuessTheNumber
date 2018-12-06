@@ -11,35 +11,35 @@ namespace GuessTheNumber
         static void Main(string[] args)
         {
             Random rng = new Random();
-            int r = rng.Next(0, 100);
+			int newRng = rng.Next(0, 100);
 
-            string input;
-            Console.WriteLine("Enter a number:");
-            input = Console.ReadLine();
-            int nr = int.Parse(input);
-            if (nr == r)
-            {
-                Console.WriteLine("You guessed the numebr!");
-            }
-            else {
-                while (nr != r)
-                {
-                    if (nr < r)
-                    {
-                        Console.WriteLine("The number is too small, please enter another one:");
-                        input = Console.ReadLine();
-                        nr = int.Parse(input);
-                    }
-                    else
-                    {
-                        Console.WriteLine("The number is too big, please enter another one:");
-                        input = Console.ReadLine();
-                        nr = int.Parse(input);
-                    }
-                }
-            }
-            }
-            
+			Console.WriteLine("Enter a number:");
+			string input = Console.ReadLine();
+			int newInput = int.Parse(input);
+
+			while (newInput != newRng)
+			{
+				if (newInput < newRng)
+				{
+					Console.WriteLine("The number is too small, please enter another one:");
+					input = Console.ReadLine();
+					newInput = int.Parse(input);
+				}
+				else if (newInput > newRng)
+				{
+					Console.WriteLine("The number is too big, please enter another one:");
+					input = Console.ReadLine();
+					newInput = int.Parse(input);
+				}
+				if (newInput == newRng)
+				{
+					Console.WriteLine("You guessed the number");
+					Console.ReadLine();
+				}
+			}
+			
         }
+            
     }
+}
 
